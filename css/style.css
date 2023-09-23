@@ -1,0 +1,221 @@
+
+body{
+    color: white;
+    background-color: #2a2b33;
+    font-family: 'IBM Plex Mono', monospace;
+}
+label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+form{
+  border: solid 1px rgb(214, 214, 214);
+  border-radius: 8px;
+  max-width: 450px;
+  margin: 200px auto;
+
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+form div{
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+div.before{
+  margin-top: 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  border: 2px solid rgb(252, 249, 249);
+  border-radius: 3px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+input.erro {
+  border-color: red;
+}
+input.valido {
+  border-color: green;
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+.erro-text {
+  opacity: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .875rem;
+  margin-top: 8px;
+  color: red;
+}
+.erro-text.ativar {
+    opacity: 1;
+}
+
+
+
+/* BUTTON BELLOW  */
+
+.glow-on-hover {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+/*MODAL */
+
+
+.dad{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000085;
+    display: none;
+}
+
+.dad.ativo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal-ins{
+    position: relative;
+    top: -50px;
+    height: 620px;
+    background-color: #eee6e6;
+    border-radius: 8px;
+    width: 340px;
+    padding: 20px;
+    padding-top: 15px;
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+main.main-modal{
+    margin-top: 20px;
+    /* border: solid 2px black; */
+}
+
+img.img{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: solid 3px #4b4a27;
+}
+
+
+section.dados{
+    color: #000;
+    position: relative;
+}
+
+section.dados p{
+    margin: 0;
+}
+
+
+section.dados div{
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+}
+
+
+p.icon{
+    padding-right: 15px;
+    color: #4b4a27;
+    font-size: 20px;
+}
+
+
+section.dados div span.title{
+    font-weight: bold;
+    font-size: 15px;
+    color: green;
+}
+
+section.dados div span{
+    font-weight: bold;
+    color: #383232;
+}
+
+
+button.btn-inside-modal{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
